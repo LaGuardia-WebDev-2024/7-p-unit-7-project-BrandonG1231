@@ -4,11 +4,11 @@ void setup() {
 }
 
 //🎯Variable Declarations Go Here
-var fireworkX = 20;
-
+var fireworkX = 200;
+var fireworkY = 360;
+var sphereradius = 30;
 //🟢Draw Procedure - Runs on Repeat
 draw = function(){
- 
   background(255,255,255,0);
   
    if(mousePressed){
@@ -17,11 +17,25 @@ draw = function(){
   }
   
   //🎯Animation Code Goes Here
-  rect(fireworkX, 15, 10, 10);
+  noStroke ();
+  fill (255, 113, 113)
+  rect(fireworkX, fireworkY, 10, 10);
+  fill (255, 21, 21)
+  ellipse (200, 150, sphereradius, sphereradius)
   
-  fireworkX = fireworkX + 1;
+  sphereradius += 1;
+  fireworkY -= 3;
 
-}
+
+   if (fireworkY < 0){ // Animation Loop
+      fireworkY = 360};
+      
+    if (sphereradius > 150) {
+    sphereradius = 30;
+    }
+ }
+
+
 
 //🟡Extra FUN Features Ms. Hall Added
 //Proceed with Caution (and Curiosity!)
